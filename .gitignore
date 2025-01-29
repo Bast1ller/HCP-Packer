@@ -1,12 +1,12 @@
-# Игнорировать содержимое папок
+# Игнорировать всё содержимое папок, кроме .gitkeep
 /ISO/*
-!/ISO/
+!/ISO/.gitkeep
 
 /packer_cache/*
-!/packer_cache/
+!/packer_cache/.gitkeep
 
 /output-ubuntu/*
-!/output-ubuntu/
+!/output-ubuntu/.gitkeep
 
 /templates/*
-!/templates/
+!/templates/.gitkeep
