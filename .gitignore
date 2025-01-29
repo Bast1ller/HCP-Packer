@@ -1,0 +1,12 @@
+# Игнорировать содержимое папок
+/ISO/*
+!/ISO/
+
+/packer_cache/*
+!/packer_cache/
+
+/output-ubuntu/*
+!/output-ubuntu/
+
+/templates/*
+!/templates/

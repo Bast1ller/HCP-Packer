@@ -1,0 +1,27 @@
+#cloud-config
+autoinstall:
+    version: 1
+    early-commands:
+        - systemctl stop ssh
+    locale: en_US
+    timezone: Europe/Moscow
+    packages: [openssh-server]
+    network:
+        version: 2
+        ethernets:
+            enp0s3:
+                dhcp4: true
+                dhcp-identifier: mac
+    identity:
+        hostname: localhost
+        username: ubuntu
+        password: '$6$7dSZ/sCVZNKxm80R$uk3WADY0ldR30ogR6yInLB0G0rziYubcCIQ91./ZWaI.XyGj7J6hG7YokeTvj5vggCG/Ycr22bYSi7mPRfN2m.'
+    ssh:
+        install-server: yes
+        allow-pw: yes
+    storage:
+        layout:
+            name: lvm
+    late-commands:
+        - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
+        - shutdown now
